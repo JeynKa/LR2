@@ -9,7 +9,6 @@ using namespace std;
 */
 void Dijkstra(int **a, int n)
 {
-	setlocale(0, "Russian");
 	int count, index, i, u;
 	int *distance = new int[n]; /// создаем массив для кратчайших путей
 	bool *visited = new bool[n]; ///  массив булевских переменных для хранения информации о посещениях вершин 
@@ -33,6 +32,7 @@ void Dijkstra(int **a, int n)
 		if (!visited[i] && a[u][i] && distance[u] != INT_MAX && distance[u] + a[u][i] < distance[i]) /// вычичление расстояния 
 			distance[i] = distance[u] + a[u][i];
 	}
+	setlocale(0, "Russian");
 
 	cout << "Кратчайшее расстояние от 1 узла до остальных"; ///< ввод кратчайш растоян 
 	for (i = 1; i < n; i++)
@@ -45,7 +45,7 @@ function main()
 */
 int main(void)
 {
-
+setlocale(0, "Russian");
 	int n;
 	cout << "Введите колличество узлов"; /// ввод кол-ва узлов
 	cin >> n;
@@ -64,6 +64,5 @@ int main(void)
 	}
 	cout << endl;
 	Dijkstra(a, n); /// вызов функции, реализ. алгоритм Д.
-	return 0;
 	system("pause");
 }
